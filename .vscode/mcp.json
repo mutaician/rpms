@@ -1,0 +1,11 @@
+{
+	"servers": {
+		"genkit": {
+			"type": "stdio",
+			"command": "genkit",
+			"args": ["mcp"],
+            "cwd": ""
+		}
+	},
+	"inputs": []
+}

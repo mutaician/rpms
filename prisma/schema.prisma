@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      String   // "DOCTOR" | "PATIENT"
+  
+  // Patient Specific Details
+  dateOfBirth    DateTime?
+  gender         String?
+  medicalHistory String?   // Simple text for now
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  doctorPlans  CarePlan[] @relation("DoctorPlans")
+  patientPlans CarePlan[] @relation("PatientPlans")
+  messages     Message[]
+}
+
+model CarePlan {
+  id                   String     @id @default(cuid())
+  patientId            String
+  doctorId             String
+  originalInstructions String
+  schedule             String     // Storing JSON as String
+  status               String     @default("ACTIVE") // ACTIVE, COMPLETED
+  createdAt            DateTime   @default(now())
+  updatedAt            DateTime   @updatedAt
+
+  patient   User       @relation("PatientPlans", fields: [patientId], references: [id])
+  doctor    User       @relation("DoctorPlans", fields: [doctorId], references: [id])
+  dailyLogs DailyLog[]
+  messages  Message[]
+}
+
+model DailyLog {
+  id                    String   @id @default(cuid())
+  carePlanId            String
+  date                  DateTime @default(now())
+  patientRawInput       String
+  patientNote           String?  // Optional note from patient
+  structuredData        String   // JSON
+  riskLevel             String   // LOW, MEDIUM, HIGH
+  status                String   @default("PENDING") // PENDING, REVIEWED
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  carePlan CarePlan @relation(fields: [carePlanId], references: [id])
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  senderId   String
+  carePlanId String
+  createdAt  DateTime @default(now())
+
+  sender   User     @relation(fields: [senderId], references: [id])
+  carePlan CarePlan @relation(fields: [carePlanId], references: [id])
+}
