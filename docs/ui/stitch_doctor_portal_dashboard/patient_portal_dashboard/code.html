@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Portal Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: "#4F6A92",
+                        },
+                        "background-light": "#f0f4f8",
+                        "background-dark": "#121826",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1A2233",
+                        "text-light-primary": "#1f2937",
+                        "text-dark-primary": "#f9fafb",
+                        "text-light-secondary": "#6b7280",
+                        "text-dark-secondary": "#9ca3af",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#374151",
+                        "success-light": "#10b981",
+                        "success-dark": "#34d399",
+                        "accent-light": "#3b82f6",
+                        "accent-dark": "#60a5fa",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light-primary dark:text-text-dark-primary">
+<div class="flex flex-col min-h-screen">
+<header class="bg-primary text-white shadow-md">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-3xl">monitor_heart</span>
+<span class="text-xl font-bold tracking-wider">MediLink Health</span>
+</div>
+<div class="flex items-center space-x-6">
+<span class="text-white/80 hover:text-white transition cursor-pointer">Dashboard</span>
+<span class="text-white/80 hover:text-white transition cursor-pointer">Readings</span>
+<span class="text-white/80 hover:text-white transition cursor-pointer">Messages</span>
+<span class="text-white/80 hover:text-white transition cursor-pointer">Appointments</span>
+</div>
+<div class="flex items-center space-x-3">
+<span>John Doe</span>
+<div class="w-10 h-10 rounded-full bg-white/30 flex items-center justify-center">
+<span class="material-icons text-white">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="bg-gradient-to-b from-primary/10 to-background-light dark:from-primary/10 dark:to-background-dark pt-8 pb-16">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<h1 class="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary">Welcome, John Doe.</h1>
+<p class="mt-2 text-lg text-text-light-secondary dark:text-text-dark-secondary">Here are your daily tasks. Complete them with a single click.</p>
+</div>
+</div>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
+<div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 md:p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-bold text-text-light-primary dark:text-text-dark-primary">Your Simple Daily Tasks</h2>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mt-1">AI-generated tasks for today, September 12, 2024</p>
+</div>
+<div class="flex items-center space-x-2 text-sm text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+<span>Powered by AI</span>
+</div>
+</div>
+<div class="space-y-5">
+<div class="flex items-center p-4 border border-border-light dark:border-border-dark rounded-lg transition-all hover:shadow-md hover:border-accent-light dark:hover:border-accent-dark">
+<input class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" id="task1" type="checkbox"/>
+<div class="ml-4 flex-grow">
+<label class="font-medium text-text-light-primary dark:text-text-dark-primary" for="task1">Take Medication (Amoxicillin, 500mg)</label>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">Due in 1 hr</p>
+</div>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary ml-4">pill</span>
+</div>
+<div class="flex items-center p-4 border border-border-light dark:border-border-dark rounded-lg transition-all hover:shadow-md hover:border-accent-light dark:hover:border-accent-dark">
+<input class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" id="task2" type="checkbox"/>
+<div class="ml-4 flex-grow">
+<label class="font-medium text-text-light-primary dark:text-text-dark-primary" for="task2">Complete Daily Vitals Check-in</label>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">Record Blood Pressure and Heart Rate</p>
+</div>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary ml-4">monitor_heart</span>
+</div>
+<div class="flex items-center p-4 border border-border-light dark:border-border-dark rounded-lg transition-all hover:shadow-md hover:border-accent-light dark:hover:border-accent-dark">
+<input class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" id="task3" type="checkbox"/>
+<div class="ml-4 flex-grow">
+<label class="font-medium text-text-light-primary dark:text-text-dark-primary" for="task3">15-minute Light Walk</label>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">Recommended before noon</p>
+</div>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary ml-4">directions_walk</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-border-light dark:border-border-dark flex flex-col items-center">
+<button class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-bold py-3 px-12 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined">task_alt</span>
+<span>One-click Submission for All Tasks</span>
+</button>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary mt-3">This will mark all checked tasks as complete and notify your doctor.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-16 py-6 bg-background-light dark:bg-background-dark border-t border-border-light dark:border-border-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-light-secondary dark:text-text-dark-secondary">
+<div class="flex justify-center space-x-6 text-sm">
+<a class="hover:text-primary dark:hover:text-white transition" href="#">Support</a>
+<a class="hover:text-primary dark:hover:text-white transition" href="#">Privacy Policy</a>
+<a class="hover:text-primary dark:hover:text-white transition" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

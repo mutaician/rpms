@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor Dashboard &amp; Triage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563EB", // A nice shade of blue
+            "background-light": "#F8FAFC", // very light gray
+            "background-dark": "#0D1117", // dark blueish gray
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem", // 8px
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    .material-icons {
+      font-size: 20px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col h-screen">
+<header class="bg-primary text-white shadow-md">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center">
+<h1 class="text-xl font-bold">DOCTOR PORTAL</h1>
+<span class="mx-4 text-gray-300">|</span>
+<p class="text-lg">Remote Patient Monitoring System</p>
+</div>
+<div class="flex items-center space-x-6">
+<button class="relative">
+<span class="material-icons">notifications</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+</span>
+</button>
+<div class="flex items-center space-x-2">
+<img alt="Dr. Sarah Chen's profile picture" class="w-10 h-10 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvB_shxOn_N8IaySRLdgMzg0zeqI0FCz0LUqcRNqlfzJeOWnfxvOQcIgAzskGb9e9jMvYWnZpSini_cekdmJwFrbjjgc-EnLx33xK58VB7IOpqnzkuTBZPpKgcB2cXxcXaEmnI2QVYrgTCCp2y1VGxKh7Fb9hYFT4RnEIAT0HYgLU-CvWQ9VVe6DSOPCNxzCP2ygZp8iwMExujjR3BAyj5eKPr4Ml-M2SsW2bMfouSzoEWIJiy5UhlmNGg3Hq-JF0gbAYLkDGje8LL"/>
+<span class="font-semibold">Dr. Sarah Chen</span>
+</div>
+</div>
+</div>
+<nav class="bg-blue-700">
+<div class="container mx-auto px-6">
+<div class="flex space-x-8">
+<a class="text-white font-semibold py-3 px-2 border-b-2 border-white" href="#">Dashboard</a>
+<a class="text-blue-200 hover:text-white py-3 px-2" href="#">Patients</a>
+<a class="text-blue-200 hover:text-white py-3 px-2" href="#">Alerts</a>
+<a class="text-blue-200 hover:text-white py-3 px-2" href="#">Reports</a>
+<a class="text-blue-200 hover:text-white py-3 px-2" href="#">Settings</a>
+<a class="text-blue-200 hover:text-white py-3 px-2" href="#">Help</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+<h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Triage Board</h2>
+<div class="space-y-4">
+<div class="p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+<h3 class="text-lg font-semibold text-red-700 dark:text-red-400 mb-3">High Risk (2)</h3>
+<div class="space-y-3">
+<div class="bg-white dark:bg-gray-700 p-3 rounded-lg flex justify-between items-center shadow-sm">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-red-500">favorite</span>
+<div>
+<p class="font-semibold text-gray-800 dark:text-gray-100">High Blood Pressure - John Doe</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">15 min ago</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">View</button>
+</div>
+<div class="bg-white dark:bg-gray-700 p-3 rounded-lg flex justify-between items-center shadow-sm">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-red-500">warning</span>
+<div>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Low Oxygen Saturation - Mary Smith</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">30 min ago</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">View</button>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800">
+<h3 class="text-lg font-semibold text-yellow-700 dark:text-yellow-400 mb-3">Medium Risk (2)</h3>
+<div class="space-y-3">
+<div class="bg-white dark:bg-gray-700 p-3 rounded-lg flex justify-between items-center shadow-sm">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-yellow-500">medication</span>
+<div>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Missed Medication - Robert Johnson</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">1 hour ago</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">View</button>
+</div>
+<div class="bg-white dark:bg-gray-700 p-3 rounded-lg flex justify-between items-center shadow-sm">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-yellow-500">scale</span>
+<div>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Weight Gain - Emily Davis</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2 hours ago</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">View</button>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+<h3 class="text-lg font-semibold text-green-700 dark:text-green-400 mb-3">Low Risk (1)</h3>
+<div class="bg-white dark:bg-gray-700 p-3 rounded-lg flex justify-between items-center shadow-sm">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-green-500">check_circle</span>
+<div>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Stable Vitals - Michael Brown</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Vitals logged 5 min ago</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">View</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+<h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Quick Actions</h3>
+<div class="space-y-3">
+<button class="w-full text-left flex items-center space-x-3 text-primary hover:underline font-medium p-2 rounded">
+<span class="material-icons">add_circle</span>
+<span>Add New Patient</span>
+</button>
+<button class="w-full text-left flex items-center space-x-3 text-primary hover:underline font-medium p-2 rounded">
+<span class="material-icons">send</span>
+<span>Send Broadcast Message</span>
+</button>
+<button class="w-full text-left flex items-center space-x-3 text-primary hover:underline font-medium p-2 rounded">
+<span class="material-icons">smart_toy</span>
+<span>Generate AI Care Plan</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+<h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Patient Management</h3>
+<div class="relative mb-4">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:ring-primary focus:border-primary" placeholder="Search patients..." type="text"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<p class="font-medium text-gray-800 dark:text-gray-100">John Doe</p>
+<span class="text-sm font-semibold px-2.5 py-0.5 rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">High Risk</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<p class="font-medium text-gray-800 dark:text-gray-100">Mary Smith</p>
+<span class="text-sm font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Stable</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<p class="font-medium text-gray-800 dark:text-gray-100">Robert Johnson</p>
+<span class="text-sm font-semibold px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">Medium Risk</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<p class="font-medium text-gray-800 dark:text-gray-100">Emily Davis</p>
+<span class="text-sm font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Stable</span>
+</div>
+</div>
+<button class="mt-4 w-full text-center text-primary hover:underline font-medium">View All Patients</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

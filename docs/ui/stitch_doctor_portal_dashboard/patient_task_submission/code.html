@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Task Submission</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0284c7' // sky-600
+                        },
+                        "background-light": '#f8fafc', // slate-50
+                        "background-dark": '#0f172a', // slate-900
+                    },
+                    fontFamily: {
+                        display: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem", // md
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 antialiased">
+<div class="flex flex-col min-h-screen">
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+<span class="material-icons text-primary text-3xl mr-2">monitor_heart</span>
+<span class="font-bold text-xl text-slate-900 dark:text-white">Remote Patient Monitoring System</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">My Data</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Messages</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Profile</a>
+</nav>
+</div>
+</div>
+</header>
+<main class="flex-grow py-8 md:py-12">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Patient Task Submission</h1>
+<p class="mt-2 text-lg text-slate-600 dark:text-slate-400">Please complete your daily tasks below.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 sm:p-8">
+<form action="#" method="POST">
+<div class="space-y-8">
+<div>
+<h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-4 border-b border-slate-200 dark:border-slate-700 pb-3">Your AI-Generated Tasks for Today</h2>
+<div class="space-y-5 mt-4">
+<div class="relative">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1" for="systolic">Measure your blood pressure (Systolic/Diastolic)</label>
+<div class="flex items-center space-x-2">
+<div class="relative flex-1">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-icons text-slate-400">favorite_border</span>
+</div>
+<input class="block w-full rounded-md border-slate-300 dark:border-slate-600 bg-background-light dark:bg-slate-700 pl-10 shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="systolic" name="systolic" placeholder="e.g., 120/80 mmHg" type="text"/>
+</div>
+</div>
+</div>
+<div class="relative">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1" for="weight">Record your weight</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-icons text-slate-400">monitor_weight</span>
+</div>
+<input class="block w-full rounded-md border-slate-300 dark:border-slate-600 bg-background-light dark:bg-slate-700 pl-10 shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="weight" name="weight" placeholder="e.g., 150 lbs" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Have you taken your prescribed medication today?</label>
+<fieldset class="mt-2">
+<legend class="sr-only">Medication Adherence</legend>
+<div class="flex items-center space-x-6">
+<div class="flex items-center">
+<input checked="" class="h-4 w-4 border-slate-300 text-primary focus:ring-primary" id="med-yes" name="medication" type="radio"/>
+<label class="ml-3 block text-sm text-slate-900 dark:text-slate-100" for="med-yes">Yes</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 border-slate-300 text-primary focus:ring-primary" id="med-no" name="medication" type="radio"/>
+<label class="ml-3 block text-sm text-slate-900 dark:text-slate-100" for="med-no">No</label>
+</div>
+</div>
+</fieldset>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1" for="notes">Additional Notes (Optional)</label>
+<textarea class="block w-full rounded-md border-slate-300 dark:border-slate-600 bg-background-light dark:bg-slate-700 shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="notes" name="notes" placeholder="How are you feeling today? Any specific symptoms?" rows="3"></textarea>
+</div>
+</div>
+</div>
+<div class="bg-sky-50 dark:bg-sky-900/30 border-l-4 border-primary p-4 rounded-md">
+<div class="flex">
+<div class="flex-shrink-0">
+<span class="material-icons text-primary">psychology</span>
+</div>
+<div class="ml-3">
+<p class="text-sm text-sky-700 dark:text-sky-200">
+                                            Your submissions are analyzed by our AI to assess health risks and extract structured data for your doctor's review.
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">
+<button class="w-full sm:w-auto inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-colors" type="submit">
+                                Submit Daily Tasks
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 mt-auto">
+<div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center text-sm text-slate-500 dark:text-slate-400">
+<p>© 2024 Remote Patient Monitoring System. All rights reserved.</p>
+<div class="space-x-4">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

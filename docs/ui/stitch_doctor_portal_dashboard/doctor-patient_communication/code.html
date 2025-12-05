@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor-Patient Communication</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2d6a88", // A deeper blue-cyan for primary actions
+                        "background-light": "#e0f2f7",
+                        "background-dark": "#0a192f",
+                        "card-light": "#ffffff",
+                        "card-dark": "#172a46",
+                        "text-light-primary": "#1f2937",
+                        "text-dark-primary": "#e2e8f0",
+                        "text-light-secondary": "#4b5563",
+                        "text-dark-secondary": "#94a3b8",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        display: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light-primary dark:text-dark-primary">
+<div class="flex flex-col h-screen">
+<header class="bg-card-light dark:bg-card-dark shadow-sm">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">add_moderator</span>
+<h1 class="text-2xl font-bold text-primary">HealthConnect RPM</h1>
+</div>
+<nav class="flex items-center gap-6 text-text-light-secondary dark:text-dark-secondary">
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Dashboard</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">My Care Plan</a>
+<a class="text-primary dark:text-white font-semibold border-b-2 border-primary pb-1" href="#">Messages</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Profile</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Log Out</a>
+</nav>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-6 py-8">
+<div class="flex gap-8 h-[calc(100vh-160px)]">
+<aside class="w-1/4 bg-card-light dark:bg-card-dark rounded-lg shadow-md p-4 flex flex-col">
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">groups</span>
+                        Patient Exchanges
+                    </h2>
+<div class="relative mb-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-light-secondary dark:text-dark-secondary">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary focus:border-primary transition" placeholder="Search patients..." type="text"/>
+</div>
+<div class="flex-grow overflow-y-auto -mr-2 pr-2">
+<div class="flex items-center gap-4 p-3 rounded-lg bg-primary/10 dark:bg-primary/20 cursor-pointer mb-2">
+<img alt="Avatar for Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPPXvbNd6JovXksT1lnjcEvG-clxioLZUS1PXcqL4F-BlCoFgoBFH2-uWM5TymyiH2pNb8CYetF4iSDxLRcY09GN9r2UaMO6S6jzfD_7RTyvkz3wmJ2Zx-Zq9QsdbDKirOx-DCFwWXvD4H3zgbiHBIXvXhN6uoICzXAAYm5kmY3LfCmiS6PAwlmpI3wl0TCvWNCuhefMNePdq5iUuNj74JQ5paLRI6NAbiwTom05FhlD8ZlRQtMiP-aSIiDUVGvCFdlm0uZrwdt2Tj"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-text-light-primary dark:text-dark-primary">Sarah Johnson</p>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary">10:42 AM</span>
+</div>
+<p class="text-sm text-text-light-secondary dark:text-dark-secondary truncate">It's a bit high today, around 145/90.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg hover:bg-background-light dark:hover:bg-background-dark cursor-pointer mb-2 transition-colors">
+<img alt="Avatar for Robert Miller" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXLkUtszgpoQU3Cz6TYO3lI1wUI7vad-MoI1ugFMRCVPBRKbWRW2jaIt58mhEGcBwSD3u8jpkMoRmURJeNkKtXjZ4OOWOai-HcwLOT7dAb6WfzRFogq6GoBLKTBHKVEcRte_bSWfoNDm7U3_7I2z2dxpCSpwv4o788OgDwElVmgSMGqs9eWqZnBsl4NFeNpr6csKnuxzqYjoKtIe7QqM_0Rb0lCETQkg8fySdqa_XBuEO_ruKufD0Bd-zNulaQjsn_SYUkDCfyiJpW"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-text-light-primary dark:text-dark-primary">Robert Miller</p>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary">Yesterday</span>
+</div>
+<p class="text-sm text-text-light-secondary dark:text-dark-secondary truncate">Feeling much better, thank you doc.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg hover:bg-background-light dark:hover:bg-background-dark cursor-pointer mb-2 transition-colors">
+<img alt="Avatar for Emily Davis" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWhgcUKZsvOAHvt3o5GrVo7HL3drpMQf0sewCqb9TVOx-yEOZmury_LAc4jXljjUwcmr0V487RXzbchsfXEJsTXltUmzd57yNNHdznplAgWEMS4XKas_AJj5yTJJ9LExEwdl8otUPHLnqdm5Iy1YuFa58QxO30qkV-wcSU1Vf9tRBGvc1XJ9DR7Ldlo0w7Gu4NhjIv-ZHp7VLNYRR_aGuqHKAoMrYq7is0U3eBiP_ccxZNgEexg4ujKTQYEHk8IsLvszpYOj6lq_o2"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-text-light-primary dark:text-dark-primary">Emily Davis</p>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary">3d ago</span>
+</div>
+<p class="text-sm text-text-light-secondary dark:text-dark-secondary truncate">Should I adjust my medication?</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg hover:bg-background-light dark:hover:bg-background-dark cursor-pointer mb-2 transition-colors">
+<img alt="Avatar for James Wilson" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5IQvIv6L6OVVplZuu8X5fhCqsNy8fkeu4WZkxW8SP3cUaP1NkrTgsqe23rVn1whweK3qhUsu5tZZyLNTgORrGtR-zvpGaL2uRRfP3maK_9Y1uudeLPW-Yo26YqdktVcnE2Z1EYuaRh2a7MhsV2FZ0h4X4yeqPzLNGbXWLZwZ2yPqL9snhC_GyavF-pIWtfY4siBesQqDPxtyaF7R8tYKgCyAmnsk02PNbwxl4hV3D28IJEt2ZKZ1-ChJzRGnNW2jYs434Huoc6Xz"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-semibold text-text-light-primary dark:text-dark-primary">James Wilson</p>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary">1w ago</span>
+</div>
+<p class="text-sm text-text-light-secondary dark:text-dark-secondary truncate">All vitals submitted for the week.</p>
+</div>
+</div>
+</div>
+</aside>
+<section class="w-3/4 flex flex-col bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+<div class="p-4 border-b border-border-light dark:border-border-dark flex justify-between items-center">
+<div>
+<h3 class="text-xl font-bold">Sarah Johnson</h3>
+<p class="text-sm text-green-600 dark:text-green-400 flex items-center gap-1">
+<span class="w-2 h-2 bg-green-500 rounded-full inline-block"></span>
+                                Online
+                            </p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-background-light dark:hover:bg-background-dark text-text-light-secondary dark:text-dark-secondary transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="p-2 rounded-full hover:bg-background-light dark:hover:bg-background-dark text-text-light-secondary dark:text-dark-secondary transition-colors">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="p-2 rounded-full hover:bg-background-light dark:hover:bg-background-dark text-text-light-secondary dark:text-dark-secondary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="p-4 border-b border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50">
+<div class="flex items-center justify-between">
+<p class="text-sm font-semibold text-text-light-secondary dark:text-dark-secondary">Quick Actions:</p>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 text-sm bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors shadow">
+<span class="material-symbols-outlined text-base">emergency_home</span> Urgent Revisit
+                                </button>
+<button class="flex items-center gap-2 text-sm bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors shadow">
+<span class="material-symbols-outlined text-base">forward_to_inbox</span> Further Followup
+                                </button>
+<button class="flex items-center gap-2 text-sm bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors shadow">
+<span class="material-symbols-outlined text-base">health_and_safety</span> Mark as Healed
+                                </button>
+</div>
+</div>
+</div>
+<div class="flex-grow p-6 overflow-y-auto">
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<img alt="Avatar for Sarah Johnson" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUSvSaHl8YeTTMD2k9TgiPULHWeF8hciBABblA0rWdlNfp4V-Iyec_uTOXBCGnJyymDA8-6az3Gw9flLtluvsWpI2rM1H6qvBsTFDoTy--56jL9PmZTbSXFMWilkgkTMkE7uDg6eYZ5IuKa9x6t4IS2L7F7rOcjJPM_brMVwbgtIJKJzCDMFRUw2gaa4KaXAu0yI7bTMyJwSJSBB8EK-EDgP5FS3uI7wH54pXoHkP-pzwmQ9Ym36zSjTxcjcvHQ7RoPUZOXvkIJDsu"/>
+<div class="flex flex-col items-start">
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-lg rounded-tl-none max-w-lg">
+<p>Good morning, Doctor. I just took my blood pressure and wanted to let you know the reading.</p>
+</div>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary mt-1">10:40 AM</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<img alt="Avatar for Sarah Johnson" class="w-10 h-10 rounded-full opacity-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA08V_766Ivqbyd5N8D6SOClgpjJG20jBtYGxYwB2fs_nslAaA645Onp3_GfwWalxj6aI6-WjeyBiNMhn6OMPHpFG5RK1LbYFhvJo9poA7WA5_I9tIqlX8Po-rjjFvoV9wuF5oFLIkXRturxfkItMpKJnUGoNRzF1rlwtbrjxvEKaoXgHlWh9kC41SV-ffHLFvu54wWvaS2F7GhAgyVZlhanVIePzSHPw3dLfinZGRMaefCGjH-qdV9GUO00XnoYlFxcrxeRvP6lmBp"/> 
+<div class="flex flex-col items-start">
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-lg rounded-tl-none max-w-lg">
+<p>It's a bit high today, around 145/90.</p>
+</div>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary mt-1">10:42 AM</span>
+</div>
+</div>
+<div class="flex items-start gap-3 justify-end">
+<div class="flex flex-col items-end">
+<div class="bg-primary text-white p-3 rounded-lg rounded-tr-none max-w-lg">
+<p>Thanks for letting me know, Sarah. Don't worry, a single high reading isn't unusual. Have you been feeling any other symptoms like headaches or dizziness?</p>
+</div>
+<span class="text-xs text-text-light-secondary dark:text-dark-secondary mt-1">10:45 AM</span>
+</div>
+<img alt="Avatar for Doctor" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9JZ_5I-OZGwypKtKCRxH_emcuDTZjd9l6qZfYl_SFudzGh00uajrflrwQPMH591iqE4ELDx2ofdXeMBBYHkYWMhPTd-Icq1hh7hAOMO3e1evLqp32wzY26lfrN5sjcCP73ConURMkK1ASYIFsOCPf9oizGC8Hx5m9Qsjd_ila1K8SfNc8mPdiiT6n7fCrgNKM6ZXHCjBeUzw9P1laTXlz7_w8Ngn3-77rnZdhK9HX1tQHTc-o8eTzbUJ8o4sa1SSPZMzjb4mzhxj"/>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark mt-auto">
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark rounded-lg p-2">
+<button class="p-2 text-text-light-secondary dark:text-dark-secondary hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="flex-grow bg-transparent focus:ring-0 border-0 text-text-light-primary dark:text-dark-primary placeholder-text-light-secondary dark:placeholder-text-dark-secondary" placeholder="Type your message here..." type="text"/>
+<button class="p-2 text-text-light-secondary dark:text-dark-secondary hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">mood</span>
+</button>
+<button class="bg-primary text-white rounded-lg px-6 py-2.5 flex items-center gap-2 hover:bg-opacity-90 transition-all shadow">
+<span class="font-semibold">Send</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+
+</body></html>

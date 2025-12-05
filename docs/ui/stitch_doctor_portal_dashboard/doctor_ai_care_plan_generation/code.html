@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Care Plan Generation</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              "background-light": "#e2e8f0",
+              "background-dark": "#1e293b",
+            },
+            fontFamily: {
+              display: ["Roboto", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="flex h-screen">
+<aside class="w-64 bg-[#1e3a8a] text-white flex flex-col">
+<div class="p-6 text-xl font-bold flex items-center space-x-2">
+<span class="material-icons text-3xl">health_and_safety</span>
+<span>Doctor Portal</span>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-[#2d52a2] transition-colors" href="#">
+<span class="material-icons">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-[#2d52a2] transition-colors" href="#">
+<span class="material-icons">people</span>
+<span>Patients</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg bg-[#2d52a2] font-semibold" href="#">
+<span class="material-icons">description</span>
+<span>Care Plans</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-[#2d52a2] transition-colors" href="#">
+<span class="material-icons">monitoring</span>
+<span>Monitoring</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-[#2d52a2] transition-colors" href="#">
+<span class="material-icons">analytics</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-[#2d52a2] transition-colors" href="#">
+<span class="material-icons">auto_awesome</span>
+<span>AI Care Plans</span>
+</a>
+</nav>
+<div class="p-4">
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-[#2d52a2] transition-colors" href="#">
+<span class="material-icons">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">AI Care Plan Generation</h1>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+<div class="mb-8">
+<h2 class="text-xl font-semibold mb-4 text-slate-900 dark:text-white">Generate with AI</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Describe the patient's condition and desired outcomes in natural language. The AI will generate a structured care plan based on your input.
+                    </p>
+<div class="relative">
+<textarea class="w-full p-4 pr-12 rounded-md border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="e.g., 'Create a 2-week post-op recovery plan for a patient after knee replacement surgery. Focus on gentle exercises, pain management with Tylenol, and daily wound monitoring.'" rows="4"></textarea>
+<button class="absolute bottom-3 right-3 bg-primary text-white p-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-slate-700 transition-all duration-200">
+<span class="material-icons">auto_awesome</span>
+</button>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-semibold text-slate-900 dark:text-white">Generated Care Plan (Editable)</h2>
+<div class="flex items-center space-x-2">
+<button class="px-4 py-2 rounded-md border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<span class="material-icons text-base align-middle mr-1">edit</span> Edit
+                            </button>
+<button class="px-4 py-2 rounded-md bg-green-500 text-white hover:bg-green-600 transition-colors">
+<span class="material-icons text-base align-middle mr-1">person_add</span>Assign to Patient
+                            </button>
+</div>
+</div>
+<div class="space-y-4 p-4 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-900/50">
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="plan-name">Plan Name</label>
+<input class="mt-1 block w-full rounded-md border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 shadow-sm focus:border-primary focus:ring-primary" id="plan-name" type="text" value="Post-Knee Replacement Recovery - 2 Weeks"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="description">Description</label>
+<textarea class="mt-1 block w-full rounded-md border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 shadow-sm focus:border-primary focus:ring-primary" id="description" rows="2">A structured plan for the first two weeks following a total knee replacement surgery, focusing on mobility, pain management, and preventing complications.</textarea>
+</div>
+<h3 class="text-lg font-semibold pt-4 text-slate-800 dark:text-slate-200">Daily Schedule</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3 p-3 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<span class="material-icons text-primary mt-1">check_circle_outline</span>
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-100">Morning (8:00 AM)</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Take 1 tablet of Tylenol (500mg) for pain management.</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Perform ankle pump exercises (3 sets of 10).</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"><span class="material-icons text-xl">edit</span></button>
+<button class="text-red-400 hover:text-red-600 dark:hover:text-red-300"><span class="material-icons text-xl">delete_outline</span></button>
+</div>
+<div class="flex items-start space-x-3 p-3 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<span class="material-icons text-primary mt-1">check_circle_outline</span>
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-100">Mid-day (12:00 PM)</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Inspect surgical wound for signs of infection (redness, swelling).</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Gentle knee bends (2 sets of 5, do not force).</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"><span class="material-icons text-xl">edit</span></button>
+<button class="text-red-400 hover:text-red-600 dark:hover:text-red-300"><span class="material-icons text-xl">delete_outline</span></button>
+</div>
+<div class="flex items-start space-x-3 p-3 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<span class="material-icons text-primary mt-1">check_circle_outline</span>
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-100">Evening (6:00 PM)</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Take 1 tablet of Tylenol (500mg) if needed for pain.</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Short walk with walker/crutches for 5 minutes.</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"><span class="material-icons text-xl">edit</span></button>
+<button class="text-red-400 hover:text-red-600 dark:hover:text-red-300"><span class="material-icons text-xl">delete_outline</span></button>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full text-center py-2 rounded-md border-2 border-dashed border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-colors">
+<span class="material-icons text-lg align-middle mr-1">add</span>Add Task
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
