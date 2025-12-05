@@ -10,22 +10,27 @@
     "genkit": "genkit start -- npx tsx --watch genkit/index.ts"
   },
   "dependencies": {
-    "@genkit-ai/google-genai": "^1.24.0",
-    "@prisma/client": "5",
-    "genkit": "^1.24.0",
-    "next": "16.0.3",
-    "react": "19.2.0",
+    "@genkit-ai/google-genai": "^1.25.0",
+    "@prisma/client": "^5.22.0",
+    "genkit": "^1.25.0",
+    "next": "^16.0.7",
+    "react": "^19.2.1",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^20.19.25",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.1",
     "eslint-config-next": "16.0.3",
-    "prisma": "5",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "prisma": "^5.22.0",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
+  },
+  "trustedDependencies": [
+    "@firebase/util",
+    "protobufjs",
+    "unrs-resolver"
+  ]
 }

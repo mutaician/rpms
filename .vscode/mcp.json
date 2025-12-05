@@ -1,6 +1,6 @@
 {
 	"servers": {
-		"genkit": {
+		"genkit mcp server": {
 			"type": "stdio",
 			"command": "genkit",
 			"args": ["mcp"],
